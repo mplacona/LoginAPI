@@ -13,6 +13,8 @@ namespace LoginAPI
         {
             string base64Login = EncodeToBase64(login.Email + ":" + login.Password);
 
+            Get("/", _ => "You can read more about this project in https://github.com/mplacona/LoginAPI");
+
             Post("/api/login", args =>
             {
                 var model = this.Bind<Login>();
